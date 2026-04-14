@@ -28,11 +28,11 @@
   --fh:'Bebas Neue',sans-serif;
   --fb:'DM Sans',sans-serif;
 }
-html,body{height:100%;width:100%;background:#0a0a0a;font-family:var(--fb);display:flex;align-items:center;justify-content:center;overflow:hidden}
+html,body{height:100%;width:100%;margin:0;padding:0;background:#030303;overflow:hidden;}
 
 /* PHONE */
-.phone{width:390px;height:100vh;max-height:844px;background:var(--bg);display:flex;flex-direction:column;position:relative;overflow:hidden}
-@media(min-width:440px){.phone{border-radius:50px;box-shadow:0 60px 120px rgba(0,0,0,0.95),0 0 0 1px #000;border:1px solid rgba(255,255,255,0.05)}}
+.phone{width:100%;height:100vh;height:100dvh;background:var(--bg);overflow:hidden;display:flex;flex-direction:column;position:relative;}
+@media(min-width:440px){.phone{width:100%;height:100vh;height:100dvh;background:var(--bg);overflow:hidden;display:flex;flex-direction:column;position:relative;}}
 
 /* STATUS BAR */
 .sbar{height:50px;padding:16px var(--pad) 0;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:relative;z-index:20}
@@ -40,7 +40,7 @@ html,body{height:100%;width:100%;background:#0a0a0a;font-family:var(--fb);displa
 .sbar-r{display:flex;gap:6px;align-items:center;opacity:0.45}
 
 /* SCREEN SYSTEM */
-.screen{display:none;flex-direction:column;flex:1;overflow:hidden;animation:fadeIn .2s ease}
+.screen{display:none;flex-direction:column;width:100%;height:100vh;height:100dvh;overflow:hidden;position:relative;}
 .screen.active{display:flex}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 .scroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
@@ -96,7 +96,7 @@ html,body{height:100%;width:100%;background:#0a0a0a;font-family:var(--fb);displa
 /* ═══════════════════════════
    1. HERO ENTRY SCREEN
 ═══════════════════════════ */
-.hero{flex:1;display:flex;flex-direction:column;position:relative;overflow:hidden;background:#030303}
+.hero{flex:1;display:flex;flex-direction:column;position:relative;overflow:hidden;background:#030303;min-height:0;}
 
 /* ── BACKGROUND ATMOSPHERE ── */
 /* Deep cinematic gradient — not a wallpaper, just air */
@@ -403,13 +403,12 @@ html,body{height:100%;width:100%;background:#0a0a0a;font-family:var(--fb);displa
 
 /* ── CTA ── */
 .hero-cta{
-  position:absolute;
-  bottom:20px;
-  left:var(--pad);
-  right:var(--pad);
+  padding:12px 0 32px;
+  margin-top:auto;
   display:flex;flex-direction:column;align-items:center;gap:6px;
   animation:fadeSlideUp .5s 1.5s ease both;
   z-index:7;
+  flex-shrink:0;
 }
 .hero-btn-primary{
   width:auto;min-width:200px;max-width:260px;
@@ -850,25 +849,12 @@ html,body{height:100%;width:100%;background:#0a0a0a;font-family:var(--fb);displa
   --fb:'DM Sans',sans-serif;
 }
 
-html,body{
-  height:100%;width:100%;
-  background:#0a0a0a;
-  font-family:var(--fb);
-  display:flex;align-items:center;justify-content:center;
-  overflow:hidden;
-}
+html,body{height:100%;width:100%;margin:0;padding:0;background:#030303;overflow:hidden;}
 
 /* PHONE SHELL */
-.phone{
-  width:390px;height:100vh;max-height:844px;
-  background:var(--bg);
-  border-radius:0;
-  overflow:hidden;
-  display:flex;flex-direction:column;
-  position:relative;
-}
+.phone{width:100%;height:100vh;height:100dvh;background:var(--bg);overflow:hidden;display:flex;flex-direction:column;position:relative;}
 @media(min-width:440px){
-  .phone{border-radius:50px;box-shadow:0 60px 120px rgba(0,0,0,0.95),0 0 0 1px #000;border:1px solid rgba(255,255,255,0.05)}
+  .phone{width:100%;height:100vh;height:100dvh;background:var(--bg);overflow:hidden;display:flex;flex-direction:column;position:relative;}
 }
 
 /* STATUS BAR */
@@ -877,7 +863,7 @@ html,body{
 .sbar-r{display:flex;gap:6px;align-items:center;opacity:0.45}
 
 /* SCREEN SYSTEM */
-.screen{display:none;flex-direction:column;flex:1;overflow:hidden;animation:fadeIn .2s ease}
+.screen{display:none;flex-direction:column;width:100%;height:100vh;height:100dvh;overflow:hidden;position:relative;}
 .screen.active{display:flex}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 
@@ -1223,38 +1209,8 @@ html,body{
 .notes-input::placeholder{color:rgba(255,255,255,0.14);font-size:11px}
 .notes-input:focus{border-color:rgba(255,90,0,0.5)}
 
-/* ── REAL MOBILE: remove phone frame ── */
-@media screen and (max-width: 480px) {
-  html, body {
-    background: #030303 !important;
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
-  }
-  .phone {
-    width: 100vw !important;
-    height: 100vh !important;
-    height: 100dvh !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    border: none !important;
-    max-width: 100% !important;
-  }
-  .screen {
-    height: 100vh !important;
-    height: 100dvh !important;
-  }
-  .hero {
-    height: 100vh !important;
-    height: 100dvh !important;
-  }
-  .hero-cta {
-    position: fixed !important;
-    bottom: 20px !important;
-    left: 24px !important;
-    right: 24px !important;
-    z-index: 999 !important;
-  }
-}
+
+
 </style>
 
   <!-- Firebase SDK -->
@@ -1277,14 +1233,7 @@ html,body{
 </head>
 <body>
 <div class="phone" id="app">
-
-  <div class="sbar">
-    <span class="sbar-time" id="clock">9:41</span>
-    <div class="sbar-r">
-      <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><rect x="0" y="5" width="3" height="7" rx="0.5" fill="#aaa"/><rect x="4.5" y="3" width="3" height="9" rx="0.5" fill="#aaa"/><rect x="9" y="1" width="3" height="11" rx="0.5" fill="#aaa"/></svg>
-      <svg width="26" height="13" viewBox="0 0 26 13" fill="none"><rect x="0.5" y="0.5" width="22" height="12" rx="3" stroke="#aaa" stroke-opacity="0.35"/><rect x="2" y="2" width="16" height="9" rx="1.5" fill="#aaa" opacity="0.6"/></svg>
-    </div>
-  </div>
+</div>
 
   <!-- ═══ 1. HERO ENTRY ═══ -->
   <div class="screen active" id="screen-split">
@@ -2333,191 +2282,7 @@ auth.onAuthStateChanged(user => {
 });
 
 // ── REAL CREATE ACCOUNT ──
-function tryCreateAccount(){
-  const first = document.getElementById('ac-first').value.trim();
-  const last  = document.getElementById('ac-last').value.trim();
-  const phone = document.getElementById('ac-phone').value.trim();
-  const email = document.getElementById('ac-email').value.trim();
-  const city  = document.getElementById('ac-city').value.trim();
-  const pass  = document.getElementById('ac-pass').value.trim();
-  const err   = document.getElementById('ac-err');
-  const show  = m => { err.textContent = m; err.style.display = 'block'; };
 
-  if(!first)           return show('Enter your first name.');
-  if(!last)            return show('Enter your last name.');
-  if(!phone)           return show('Enter your phone number.');
-  if(!email || !email.includes('@')) return show('Enter a valid email.');
-  if(!city)            return show('Enter your city.');
-  if(!pass || pass.length < 6)       return show('Password must be at least 6 characters.');
-
-  err.style.display = 'none';
-
-  // Create Firebase Auth user
-  auth.createUserWithEmailAndPassword(email, pass)
-    .then(cred => {
-      const uid = cred.user.uid;
-      // Save user profile to Firestore
-      return db.collection('users').doc(uid).set({
-        uid, firstName: first, lastName: last,
-        phone, email, city,
-        role: 'community',
-        status: 'active',
-        createdAt: firebase.firestore.FieldValue.serverTimestamp()
-      });
-    })
-    .then(() => {
-      go('onboarding');
-    })
-    .catch(e => {
-      if(e.code === 'auth/email-already-in-use') show('This email is already registered. Please log in.');
-      else if(e.code === 'auth/weak-password') show('Password must be at least 6 characters.');
-      else show('Something went wrong. Please try again.');
-    });
-}
-
-// ── REAL LOGIN ──
-function tryLogin(){
-  const email = document.getElementById('li-email').value.trim();
-  const pass  = document.getElementById('li-pass').value.trim();
-  const err   = document.getElementById('li-err');
-  const show  = m => { err.textContent = m; err.style.display = 'block'; };
-
-  if(!email || !email.includes('@')) return show('Enter a valid email.');
-  if(!pass || pass.length < 6)       return show('Password must be at least 6 characters.');
-
-  err.style.display = 'none';
-
-  auth.signInWithEmailAndPassword(email, pass)
-    .then(cred => {
-      return db.collection('users').doc(cred.user.uid).get();
-    })
-    .then(doc => {
-      if(!doc.exists) { go('community-home'); return; }
-      const data = doc.data();
-      if(data.role === 'coach')                             go('coach');
-      else if(data.role === 'athlete' && data.status === 'active') go('home');
-      else if(data.status === 'pending')                    go('community-home');
-      else                                                  go('community-home');
-    })
-    .catch(e => {
-      if(e.code === 'auth/user-not-found')  show('No account found with this email.');
-      else if(e.code === 'auth/wrong-password') show('Incorrect password.');
-      else show('Login failed. Please try again.');
-    });
-}
-
-// ── SAVE ONBOARDING DATA ──
-function saveOnboarding(goal, output, commitment, sessions){
-  if(!currentUser) return;
-  db.collection('users').doc(currentUser.uid).update({
-    primaryGoal: goal || '',
-    primaryOutput: output || '',
-    weeklyCommitment: commitment || '',
-    sessionsPerWeek: sessions || 3,
-    onboardingComplete: true
-  }).catch(e => console.log('Onboarding save error:', e));
-}
-
-// ── SUBMIT COACHING APPLICATION ──
-function submitCoachApp(){
-  const goalSel   = document.querySelector('#ca-goals .ca-opt.on');
-  const commitSel = document.querySelector('#ca-commit .ca-opt.on');
-  const city      = document.getElementById('ca-city').value.trim();
-  const err       = document.getElementById('ca-err');
-  const show      = m => { err.textContent = m; err.style.display = 'block'; };
-
-  if(!goalSel)   return show('Select your primary goal.');
-  if(!commitSel) return show('Select your level of commitment.');
-  if(!city)      return show('Enter your city of residence.');
-  if(!calSelDay) return show('Select a consultation date.');
-  if(!calSelTime)return show('Select a consultation time.');
-
-  err.style.display = 'none';
-
-  const dateStr = calMonths[calMonth] + ' ' + calSelDay + ', ' + calYear;
-  const appData = {
-    goal: goalSel.textContent.trim(),
-    commitment: commitSel.textContent.trim(),
-    city,
-    consultationDate: dateStr,
-    consultationTime: calSelTime,
-    status: 'pending',
-    submittedAt: firebase.firestore.FieldValue.serverTimestamp()
-  };
-
-  // Add user info if logged in
-  if(currentUser){
-    appData.userId = currentUser.uid;
-    db.collection('users').doc(currentUser.uid).get().then(doc => {
-      if(doc.exists){
-        const u = doc.data();
-        appData.firstName = u.firstName || '';
-        appData.lastName  = u.lastName  || '';
-        appData.email     = u.email     || '';
-        appData.phone     = u.phone     || '';
-      }
-      return db.collection('coachingApplications').add(appData);
-    }).then(() => {
-      // Update user status to pending
-      return db.collection('users').doc(currentUser.uid).update({ status: 'pending' });
-    }).then(() => {
-      document.getElementById('cc-date-val').textContent = dateStr;
-      document.getElementById('cc-time-val').textContent = calSelTime;
-      go('coach-confirm');
-    }).catch(e => show('Something went wrong. Please try again.'));
-  } else {
-    // Not logged in - save without userId
-    db.collection('coachingApplications').add(appData)
-      .then(() => {
-        document.getElementById('cc-date-val').textContent = dateStr;
-        document.getElementById('cc-time-val').textContent = calSelTime;
-        go('coach-confirm');
-      })
-      .catch(e => show('Something went wrong. Please try again.'));
-  }
-}
-
-// ── LOG ACTIVITY ──
-function saveActivity(activityData){
-  if(!currentUser){ go('login'); return; }
-  activityData.userId = currentUser.uid;
-  activityData.date = firebase.firestore.FieldValue.serverTimestamp();
-  activityData.postedToFeed = true;
-  activityData.likesCount = 0;
-  db.collection('activities').add(activityData)
-    .then(() => console.log('Activity saved'))
-    .catch(e => console.log('Activity error:', e));
-}
-
-// ── SUBMIT CHECK-IN ──
-function saveCheckin(checkinData){
-  if(!currentUser){ go('login'); return; }
-  checkinData.userId = currentUser.uid;
-  checkinData.submittedAt = firebase.firestore.FieldValue.serverTimestamp();
-  checkinData.coachReviewed = false;
-  db.collection('checkins').add(checkinData)
-    .then(() => console.log('Check-in saved'))
-    .catch(e => console.log('Check-in error:', e));
-}
-
-// ── LOGOUT ──
-function logout(){
-  auth.signOut().then(() => { go('split'); });
-}
-
-/* ── ROUTER ── */
-const SCREENS = ['split','login','create-account','onboarding','community-home','logger','feed','leaderboard','challenges','free-score','upgrade','coach-confirm','profile','home','train','checkin','score','coach'];
-function go(id) {
-  SCREENS.forEach(s => {
-    const el = document.getElementById('screen-'+s);
-    if (el) el.classList.toggle('active', s === id);
-  });
-  const active = document.getElementById('screen-'+id);
-  if (active) { const sc = active.querySelector('.scroll'); if (sc) sc.scrollTop = 0; }
-}
-
-/* ── CLOCK ── */
-function tick(){const n=new Date();document.getElementById('clock').textContent=n.getHours()+':'+String(n.getMinutes()).padStart(2,'0')}
 tick();setInterval(tick,10000);
 
 
@@ -2525,270 +2290,7 @@ tick();setInterval(tick,10000);
 /* ── CALENDAR ── */
 let calYear=2026, calMonth=3, calSelDay=null, calSelTime=null;
 const calMonths=['January','February','March','April','May','June','July','August','September','October','November','December'];
-function renderCal(){
-  const grid=document.getElementById('cal-grid');
-  const lbl=document.getElementById('cal-month-lbl');
-  if(!grid||!lbl) return;
-  lbl.textContent=calMonths[calMonth]+' '+calYear;
-  const firstDay=new Date(calYear,calMonth,1).getDay();
-  const daysInMonth=new Date(calYear,calMonth+1,0).getDate();
-  const today=new Date();
-  const todayD=today.getDate(),todayM=today.getMonth(),todayY=today.getFullYear();
-  let html='';
-  for(let i=0;i<firstDay;i++) html+='<div class="cal-day empty"></div>';
-  for(let d=1;d<=daysInMonth;d++){
-    const isPast=(calYear<todayY)||(calYear===todayY&&calMonth<todayM)||(calYear===todayY&&calMonth===todayM&&d<todayD);
-    const isToday=d===todayD&&calMonth===todayM&&calYear===todayY;
-    const isSel=d===calSelDay;
-    let cls='cal-day';
-    if(isPast) cls+=' past';
-    else cls+=' avail';
-    if(isToday) cls+=' today';
-    if(isSel) cls+=' sel';
-    html+=`<div class="${cls}" onclick="calSelect(${d})">${d}</div>`;
-  }
-  grid.innerHTML=html;
-}
-function calNav(d){
-  calMonth+=d;
-  if(calMonth>11){calMonth=0;calYear++}
-  if(calMonth<0){calMonth=11;calYear--}
-  calSelDay=null;calSelTime=null;
-  document.getElementById('cal-selected-display').textContent='No date selected';
-  document.getElementById('ca-time-section').style.display='none';
-  renderCal();
-}
-function calSelect(d){
-  calSelDay=d;
-  renderCal();
-  const ts=document.getElementById('ca-time-section');
-  if(ts) ts.style.display='block';
-  document.getElementById('cal-selected-display').textContent=calMonths[calMonth]+' '+d+', '+calYear;
-  document.querySelectorAll('.time-slot').forEach(t=>t.classList.remove('on'));
-  calSelTime=null;
-}
-function caSelectTime(btn){
-  document.querySelectorAll('.time-slot').forEach(t=>t.classList.remove('on'));
-  btn.classList.add('on');
-  calSelTime=btn.textContent.trim();
-}
 
-/* ── COACHING APP SELECTS ── */
-function caSelect(btn,groupId){
-  document.getElementById(groupId).querySelectorAll('.ca-opt').forEach(b=>b.classList.remove('on'));
-  btn.classList.add('on');
-}
-
-
-
-/* init calendar */
-(function(){const now=new Date();calYear=now.getFullYear();calMonth=now.getMonth();setTimeout(renderCal,100)})();
-
-
-/* ── ONBOARDING ── */
-let obSessions=3;
-function obPick(btn,group){
-  btn.closest('.ob-grid').querySelectorAll('.ob-option').forEach(b=>b.classList.remove('on'));
-  btn.classList.add('on');
-}
-function obSeg(btn,groupId){
-  document.getElementById(groupId).querySelectorAll('.seg-opt').forEach(b=>b.classList.remove('on'));
-  btn.classList.add('on');
-}
-function obToggle(btn){btn.classList.toggle('on')}
-function obNext(step){
-  document.getElementById('ob'+step).classList.remove('active');
-  const next=document.getElementById('ob'+(step+1));
-  if(next) next.classList.add('active');
-}
-function obBack(step){
-  document.getElementById('ob'+step).classList.remove('active');
-  const prev=document.getElementById('ob'+(step-1));
-  if(prev) prev.classList.add('active');
-}
-function obStep(d){
-  obSessions=Math.max(1,Math.min(7,obSessions+d));
-  const el=document.getElementById('ob-sessions');
-  if(el) el.textContent=obSessions;
-}
-
-/* ── ACTIVITY LOGGER ── */
-let currentActivity='run';
-function selectActivity(type, card){
-  document.querySelectorAll('.act-type-card').forEach(c=>c.classList.remove('on'));
-  card.classList.add('on');
-  currentActivity=type;
-  showActStep(2);
-  ['run','lift','cycle','swim','hiit','other'].forEach(t=>{
-    const f=document.getElementById('form-'+t);
-    if(f) f.style.display=(t===type?'block':'none');
-  });
-}
-function showActStep(n){
-  document.querySelectorAll('.act-step').forEach(s=>s.classList.remove('active'));
-  document.getElementById('act-step'+n).classList.add('active');
-}
-function actStep(id, d, mn, mx){
-  const el=document.getElementById(id);
-  if(!el) return;
-  let v=parseFloat(el.textContent)+d;
-  v=Math.max(mn,Math.min(mx,v));
-  el.textContent=Number.isInteger(d)?Math.round(v):v.toFixed(1);
-  if(id==='run-dist'||id==='run-min'||id==='run-sec') calcPace();
-}
-function calcPace(){
-  const dist=parseFloat(document.getElementById('run-dist').textContent)||1;
-  const mins=parseInt(document.getElementById('run-min').textContent)||0;
-  const secs=parseInt(document.getElementById('run-sec').textContent)||0;
-  const total=mins+(secs/60);
-  if(dist>0&&total>0){
-    const pace=total/dist;
-    const pm=Math.floor(pace);
-    const ps=Math.round((pace-pm)*60);
-    document.getElementById('run-pace').textContent=pm+':'+String(ps).padStart(2,'0');
-  }
-}
-function togOpt(btn){btn.closest('.toggle-row').querySelectorAll('.toggle-opt').forEach(b=>b.classList.remove('on'));btn.classList.add('on')}
-function saveActivity(){showActStep(3)}
-
-/* ── LEADERBOARD TABS ── */
-function lbTab(btn, target){
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
-  btn.classList.add('on');
-  ['lb1','lb2','lb3'].forEach(id=>{
-    const el=document.getElementById(id);
-    if(el) el.style.display=(id===target?'block':'none');
-  });
-}
-
-/* ── CHALLENGES ── */
-function joinChallenge(btn){btn.classList.toggle('joined');btn.textContent=btn.classList.contains('joined')?'Joined':'Join challenge'}
-
-/* ── TIER PICKER ── */
-const tierData={1:{name:'Performance Saturdays',price:'$147'},2:{name:'The Performance System',price:'$247'},3:{name:'Elite Performance Circle',price:'$397'},4:{name:'Remote Performance',price:'$597'}};
-function pickTier(n){
-  [1,2,3,4].forEach(i=>document.getElementById('tc'+i).classList.toggle('sel',i===n));
-  document.getElementById('upgrade-note').textContent=tierData[n].name+' · '+tierData[n].price+'/mo';
-}
-
-/* ══ COACHED JS ══ */
-
-
-/* ══════════════════════════════════════
-   REAL FIREBASE AUTH + FIRESTORE
-══════════════════════════════════════ */
-
-// Current user state
-let currentUser = null;
-auth.onAuthStateChanged(user => {
-  currentUser = user;
-});
-
-// ── REAL CREATE ACCOUNT ──
-
-
-// ── REAL LOGIN ──
-
-
-// ── SAVE ONBOARDING DATA ──
-function saveOnboarding(goal, output, commitment, sessions){
-  if(!currentUser) return;
-  db.collection('users').doc(currentUser.uid).update({
-    primaryGoal: goal || '',
-    primaryOutput: output || '',
-    weeklyCommitment: commitment || '',
-    sessionsPerWeek: sessions || 3,
-    onboardingComplete: true
-  }).catch(e => console.log('Onboarding save error:', e));
-}
-
-// ── SUBMIT COACHING APPLICATION ──
-
-
-// ── LOG ACTIVITY ──
-function saveActivity(activityData){
-  if(!currentUser){ go('login'); return; }
-  activityData.userId = currentUser.uid;
-  activityData.date = firebase.firestore.FieldValue.serverTimestamp();
-  activityData.postedToFeed = true;
-  activityData.likesCount = 0;
-  db.collection('activities').add(activityData)
-    .then(() => console.log('Activity saved'))
-    .catch(e => console.log('Activity error:', e));
-}
-
-// ── SUBMIT CHECK-IN ──
-function saveCheckin(checkinData){
-  if(!currentUser){ go('login'); return; }
-  checkinData.userId = currentUser.uid;
-  checkinData.submittedAt = firebase.firestore.FieldValue.serverTimestamp();
-  checkinData.coachReviewed = false;
-  db.collection('checkins').add(checkinData)
-    .then(() => console.log('Check-in saved'))
-    .catch(e => console.log('Check-in error:', e));
-}
-
-// ── LOGOUT ──
-function logout(){
-  auth.signOut().then(() => { go('split'); });
-}
-
-/* ── ROUTER ── */
-const screens = ['login','home','train','checkin','score','coach'];
-function go(id) {
-  screens.forEach(s => {
-    const el = document.getElementById('screen-'+s);
-    if (el) el.classList.toggle('active', s === id);
-  });
-  const active = document.getElementById('screen-'+id);
-  if (active) {
-    const scroll = active.querySelector('.scroll');
-    if (scroll) scroll.scrollTop = 0;
-  }
-}
-
-/* ── LOGIN VALIDATION ── */
-
-function showError(msg) {
-  const err = document.getElementById('login-error');
-  err.textContent = msg;
-  err.style.display = 'block';
-}
-
-/* ── SIGNUP MODAL ── */
-function showSignup() {
-  document.getElementById('signup-modal').classList.add('on');
-}
-function pickGoal(btn) {
-  document.getElementById('su-goals').querySelectorAll('.seg-opt').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
-}
-function trySignup() {
-  const name = document.getElementById('su-name').value.trim();
-  const phone = document.getElementById('su-phone').value.trim();
-  const address = document.getElementById('su-address').value.trim();
-  const email = document.getElementById('su-email').value.trim();
-  const pass = document.getElementById('su-pass').value.trim();
-  const goalSelected = document.querySelector('#su-goals .seg-opt.on');
-  const err = document.getElementById('su-error');
-  const show = (msg) => { err.textContent = msg; err.style.display = 'block'; };
-  if (!name) { show('Enter your full name.'); return; }
-  if (!phone) { show('Enter your phone number.'); return; }
-  if (!address) { show('Enter your city and state.'); return; }
-  if (!goalSelected) { show('Select your primary training goal.'); return; }
-  if (!email || !email.includes('@')) { show('Enter a valid email address.'); return; }
-  if (!pass || pass.length < 6) { show('Password must be at least 6 characters.'); return; }
-  err.style.display = 'none';
-  document.getElementById('signup-modal').classList.remove('on');
-  go('home');
-}
-
-/* ── CLOCK ── */
-function tick() {
-  const n = new Date();
-  document.getElementById('clock').textContent =
-    n.getHours() + ':' + String(n.getMinutes()).padStart(2,'0');
-}
 tick();
 setInterval(tick, 10000);
 
